@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: consumer
+  template:
+    metadata:
+      labels:
+        app: consumer
+    spec:
+      containers:
+      - name: consumer
+        image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-consumer:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3004
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: consumer
+spec:
+  selector:
+    app: consumer
+  ports:
+  - port: 80
+    targetPort: 3004
+  type: ClusterIP
