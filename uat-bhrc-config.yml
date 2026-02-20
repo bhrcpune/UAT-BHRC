@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: config
+  template:
+    metadata:
+      labels:
+        app: config
+    spec:
+      containers:
+      - name: auth
+        image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-config:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3002
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: config
+spec:
+  selector:
+    app: config
+  ports:
+  - port: 80
+    targetPort: 3002
+  type: ClusterIP
+
