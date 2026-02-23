@@ -13,7 +13,7 @@ spec:
         app: config
     spec:
       containers:
-        - name: auth
+        - name: config
           image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-config:latest
           imagePullPolicy: Always
           ports:
@@ -32,7 +32,3 @@ spec:
     - port: 80
       targetPort: 3002
   type: ClusterIP
-  template:
-    spec:
-      containers:
-        - image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-config:latest
