@@ -35,4 +35,4 @@ spec:
   template:
     spec:
       containers:
-        - image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-frontend:20260223102936
+        - image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-frontend:latest
