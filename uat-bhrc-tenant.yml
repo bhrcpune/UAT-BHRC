@@ -13,13 +13,13 @@ spec:
         app: tenant
     spec:
       containers:
-      - name: tenant
-        image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-tenant:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 3000
+        - name: tenant
+          image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-tenant:20260223112209
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
       imagePullSecrets:
-      - name: regcred
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service
@@ -29,6 +29,10 @@ spec:
   selector:
     app: tenant
   ports:
-  - port: 80
-    targetPort: 3000
+    - port: 80
+      targetPort: 3000
   type: ClusterIP
+  template:
+    spec:
+      containers:
+        - image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-tenant:20260223112209
