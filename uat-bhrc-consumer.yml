@@ -32,7 +32,3 @@ spec:
     - port: 80
       targetPort: 3004
   type: ClusterIP
-  template:
-    spec:
-      containers:
-        - image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-consumer:20260223172711
