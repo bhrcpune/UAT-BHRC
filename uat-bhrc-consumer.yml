@@ -13,13 +13,13 @@ spec:
         app: consumer
     spec:
       containers:
-      - name: consumer
-        image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-consumer:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 3004
+        - name: consumer
+          image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-consumer:20260223172711
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3004
       imagePullSecrets:
-      - name: regcred
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service
@@ -29,6 +29,10 @@ spec:
   selector:
     app: consumer
   ports:
-  - port: 80
-    targetPort: 3004
+    - port: 80
+      targetPort: 3004
   type: ClusterIP
+  template:
+    spec:
+      containers:
+        - image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-consumer:20260223172711
