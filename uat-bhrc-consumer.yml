@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: consumer
-          image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-consumer:20260325085840
+          image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-consumer:20260423051646
           imagePullPolicy: Always
           ports:
             - containerPort: 3004
