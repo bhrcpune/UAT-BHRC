@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: patient
-          image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-patient:20260625202201
+          image: 014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-patient:20260630051349
           imagePullPolicy: Always
           ports:
             - containerPort: 3001
