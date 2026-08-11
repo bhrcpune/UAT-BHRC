@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: config
-          image: "014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-config:20260811091758"
+          image: "014498634556.dkr.ecr.ap-south-1.amazonaws.com/uat-bhrc-config:20260811111427"
           imagePullPolicy: Always
           ports:
             - containerPort: 3002
